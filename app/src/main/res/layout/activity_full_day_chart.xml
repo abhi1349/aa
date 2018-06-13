@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,13 +21,20 @@
 
         <TextView
             android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:gravity="center"
             android:text="Early Morning"
-            android:layout_height="wrap_content" />
+             />
 
         <TextView
             android:id="@+id/full_text_earlymorning"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:text="Sample1"
+
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="50dp" />
 
     </LinearLayout>
@@ -36,12 +46,16 @@
         <TextView
             android:layout_width="100dp"
             android:text="BreakFast"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/full_text_breakfast"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:text="Sample2"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="50dp" />
 
     </LinearLayout>
@@ -53,12 +67,16 @@
         <TextView
             android:layout_width="100dp"
             android:text="Mid Morning"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/full_text_midMorning"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:text="Sample3"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="50dp" />
 
     </LinearLayout>
@@ -70,12 +88,16 @@
         <TextView
             android:layout_width="100dp"
             android:text="Lunch"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/full_text_lunch"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:text="Sample4"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="50dp" />
 
     </LinearLayout>
@@ -87,12 +109,16 @@
         <TextView
             android:layout_width="100dp"
             android:text="Evening"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/full_text_evening"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:text="Sample5"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="50dp" />
 
     </LinearLayout>
@@ -103,13 +129,17 @@
 
         <TextView
             android:layout_width="100dp"
-            android:text="DInner"
+            android:text="Dinner"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/full_text_dinner"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:text="Sample6"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="50dp" />
 
     </LinearLayout>
@@ -121,15 +151,20 @@
         <TextView
             android:layout_width="100dp"
             android:text="Post Dinner"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/post_dinner"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:text="Sample7"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_height="50dp" />
 
     </LinearLayout>
 
 
 </LinearLayout>
+</ScrollView>
