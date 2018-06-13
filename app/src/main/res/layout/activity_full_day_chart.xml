@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    tools:context=".FullDayChart">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="Early Morning"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/full_text_earlymorning"
+            android:layout_width="300dp"
+            android:text="Sample1"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="BreakFast"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/full_text_breakfast"
+            android:layout_width="300dp"
+            android:text="Sample2"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="Mid Morning"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/full_text_midMorning"
+            android:layout_width="300dp"
+            android:text="Sample3"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="Lunch"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/full_text_lunch"
+            android:layout_width="300dp"
+            android:text="Sample4"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="Evening"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/full_text_evening"
+            android:layout_width="300dp"
+            android:text="Sample5"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="DInner"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/full_text_dinner"
+            android:layout_width="300dp"
+            android:text="Sample6"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="Post Dinner"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/post_dinner"
+            android:layout_width="300dp"
+            android:text="Sample7"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
