@@ -18,8 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DietGridActivity" />
-        <activity android:name=".FullDayChart"></activity>
+        <activity android:name=".FullDayChart" />
+        <activity android:name=".DaysActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +25,10 @@ public class CardViewActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         freeDietRecyclerView.setLayoutManager(gridLayoutManager);
 
-        FreeDietRecyclerViewDataAdapter carDataAdapter = new FreeDietRecyclerViewDataAdapter(freeDietItemList);
+        FreeDietRecyclerViewDataAdapter carDataAdapter = new FreeDietRecyclerViewDataAdapter(this,freeDietItemList);
         freeDietRecyclerView.setAdapter(carDataAdapter);
+
+
 
     }
 
