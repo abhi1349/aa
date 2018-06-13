@@ -3,7 +3,6 @@ package com.example.android.freediet;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +13,12 @@ import android.widget.Toast;
 import java.util.List;
 
 
-public class FreeDietRecyclerViewDataAdapter extends RecyclerView.Adapter<FreeDietRecyclerViewDataAdapter.FreeDietRecyclerViewItemHolder> {
+public class FreeDietDataAdapter extends RecyclerView.Adapter<FreeDietDataAdapter.FreeDietRecyclerViewItemHolder> {
 
-    private List<FreeDietRecyclerViewItem> freeDietItemList;
+    private List<FreeDietModel> freeDietItemList;
     Activity activity;
 
-    public FreeDietRecyclerViewDataAdapter(Activity activity,List<FreeDietRecyclerViewItem> freeDietItemList) {
+    public FreeDietDataAdapter(Activity activity, List<FreeDietModel> freeDietItemList) {
         this.freeDietItemList = freeDietItemList;
         this.activity = activity;
     }
@@ -34,9 +33,9 @@ public class FreeDietRecyclerViewDataAdapter extends RecyclerView.Adapter<FreeDi
 
     @Override
     public void onBindViewHolder(@NonNull FreeDietRecyclerViewItemHolder holder, int position) {
-        FreeDietRecyclerViewItem item = freeDietItemList.get(position);
+        FreeDietModel item = freeDietItemList.get(position);
         holder.freeDietImageView.setImageResource(item.getFreeDietImageId());
-        final FreeDietRecyclerViewItem items = freeDietItemList.get(position);
+        final FreeDietModel items = freeDietItemList.get(position);
         holder.freeDietImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

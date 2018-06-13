@@ -1,10 +1,10 @@
 package com.example.android.freediet;
 
-public class FreeDietRecyclerViewItem {
+public class FreeDietModel {
 
     private int freeDietImageId;
 
-    public FreeDietRecyclerViewItem(int freeDietImageId) {
+    public FreeDietModel(int freeDietImageId) {
         this.freeDietImageId = freeDietImageId;
     }
 

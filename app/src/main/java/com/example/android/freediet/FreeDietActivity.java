@@ -4,19 +4,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardViewActivity extends AppCompatActivity {
+public class FreeDietActivity extends AppCompatActivity {
 
-    private List<FreeDietRecyclerViewItem> freeDietItemList = null;
+    private List<FreeDietModel> freeDietItemList = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_view);
+        setContentView(R.layout.activity_free_diet);
         setTitle("Free Diet");
         initializeFreeDietItemList();
 
@@ -25,7 +24,7 @@ public class CardViewActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         freeDietRecyclerView.setLayoutManager(gridLayoutManager);
 
-        FreeDietRecyclerViewDataAdapter carDataAdapter = new FreeDietRecyclerViewDataAdapter(this,freeDietItemList);
+        FreeDietDataAdapter carDataAdapter = new FreeDietDataAdapter(this,freeDietItemList);
         freeDietRecyclerView.setAdapter(carDataAdapter);
 
 
@@ -37,10 +36,10 @@ public class CardViewActivity extends AppCompatActivity {
         if(freeDietItemList == null)
         {
             freeDietItemList = new ArrayList<>();
-            freeDietItemList.add(new FreeDietRecyclerViewItem( R.drawable.a));
-            freeDietItemList.add(new FreeDietRecyclerViewItem( R.drawable.b));
-            freeDietItemList.add(new FreeDietRecyclerViewItem( R.drawable.c));
-            freeDietItemList.add(new FreeDietRecyclerViewItem( R.drawable.d));
+            freeDietItemList.add(new FreeDietModel( R.drawable.a));
+            freeDietItemList.add(new FreeDietModel( R.drawable.b));
+            freeDietItemList.add(new FreeDietModel( R.drawable.c));
+            freeDietItemList.add(new FreeDietModel( R.drawable.d));
         }
     }
 }
