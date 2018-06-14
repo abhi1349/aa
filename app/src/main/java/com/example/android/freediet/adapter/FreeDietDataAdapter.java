@@ -1,4 +1,4 @@
-package com.example.android.freediet;
+package com.example.android.freediet.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.android.freediet.activity.DaysActivity;
+import com.example.android.freediet.R;
+import com.example.android.freediet.model.FreeDietModel;
 
 import java.util.List;
 
