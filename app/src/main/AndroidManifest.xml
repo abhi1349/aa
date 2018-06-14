@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FullDayChart">
+        <activity android:name=".FreeDietActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FreeDietActivity" />
+        <activity android:name=".FullDayChart" />
         <activity android:name=".DaysActivity">
 
         </activity>

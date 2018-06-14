@@ -1,5 +1,6 @@
 package com.example.android.freediet;
 
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,12 +35,17 @@ public class DaysActivity extends AppCompatActivity {
                 final Button button = new Button(this);
                 button.setText("Day "+day);
                 button.setId(day);
+ //               button.setPadding(8,8,8,8);
+                button.setTextColor(getResources().getColor(R.color.colorPrimary));
+  //              button.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+   //             button.setBackgroundColor(0xFFFF0000);
                 day++;
                 tableRow.addView(button);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(getApplicationContext(),""+button.getId(),Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(DaysActivity.this,FullDayChart.class));
                     }
                 });
             }

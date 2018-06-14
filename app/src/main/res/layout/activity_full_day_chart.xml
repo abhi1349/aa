@@ -2,169 +2,227 @@
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="10dp"
-    android:layout_margin="5dp"
-    android:padding="5dp"
-    tools:context=".FullDayChart">
-
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="100dp"
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp">
 
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Early Morning"
-             />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-        <TextView
-            android:id="@+id/full_text_earlymorning"
+                <TextView
+                    android:id="@+id/full_text1"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:text="Pre Breakfast"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:background="@drawable/back"
+                    android:padding="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Sample1"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@+id/full_text1"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:text="Sample1"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
 
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="50dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/full_text2"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:text="Breakfast"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:padding="4dp"/>
 
-        <TextView
-            android:layout_width="100dp"
-            android:text="BreakFast"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Sample2"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@+id/full_text2"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
 
-        <TextView
-            android:id="@+id/full_text_breakfast"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:text="Sample2"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="50dp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-        <TextView
-            android:layout_width="100dp"
-            android:text="Mid Morning"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/full_text3"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:text="Before Lunch"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:padding="4dp"/>
 
-        <TextView
-            android:id="@+id/full_text_midMorning"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Sample3"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@+id/full_text3"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:text="Sample3"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="50dp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-        <TextView
-            android:layout_width="100dp"
-            android:text="Lunch"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/full_text4"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:text="Lunch"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:padding="4dp"/>
 
-        <TextView
-            android:id="@+id/full_text_lunch"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Sample4"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@+id/full_text4"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:text="Sample4"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="50dp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-        <TextView
-            android:layout_width="100dp"
-            android:text="Evening"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/full_text5"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:text="Pre Dinner"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:padding="4dp"/>
 
-        <TextView
-            android:id="@+id/full_text_evening"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Sample5"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@+id/full_text5"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:text="Sample5"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="50dp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-        <TextView
-            android:layout_width="100dp"
-            android:text="Dinner"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/full_text6"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:text="Dinner"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:padding="4dp"/>
 
-        <TextView
-            android:id="@+id/full_text_dinner"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Sample6"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@+id/full_text6"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:text="Sample6"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="50dp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/full_text7"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:text="Post Dinner"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:padding="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Sample1"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@+id/full_text7"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="100dp"
-            android:text="Post Dinner"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/post_dinner"
-            android:layout_width="match_parent"
-            android:text="Sample7"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="50dp" />
-
-    </LinearLayout>
-
-
-</LinearLayout>
 </ScrollView>
