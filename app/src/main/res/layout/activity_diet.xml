@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    tools:context=".activity.FreeDietActivity">
+    tools:context=".activity.DietActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/card_view_recycler_list"
