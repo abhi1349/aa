@@ -1,59 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:background="@color/colorGray"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="3dp"
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="120dp"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/full_text1"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Pre Breakfast"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/ic_android"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:gravity="center"
-                    android:background="@drawable/back"
                     android:padding="4dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:text="Sample1"
-                    android:textSize="14sp"
-                    android:layout_toRightOf="@+id/full_text1"/>
+                    android:layout_marginTop="50dp"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="3dp"
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="120dp"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/full_text2"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:text="Breakfast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pre Breakfast"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/ic_android"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -63,28 +71,32 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:text="Sample2"
-                    android:textSize="14sp"
-                    android:layout_toRightOf="@+id/full_text2"/>
+                    android:layout_marginTop="50dp"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="3dp"
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="120dp"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/full_text3"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:text="Before Lunch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pre Breakfast"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/ic_android"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -94,28 +106,32 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:text="Sample3"
-                    android:textSize="14sp"
-                    android:layout_toRightOf="@+id/full_text3"/>
+                    android:layout_marginTop="50dp"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="3dp"
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="120dp"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/full_text4"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:text="Lunch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pre Breakfast"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/ic_android"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -125,28 +141,32 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:text="Sample4"
-                    android:textSize="14sp"
-                    android:layout_toRightOf="@+id/full_text4"/>
+                    android:layout_marginTop="50dp"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="3dp"
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="120dp"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/full_text5"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:text="Pre Dinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pre Breakfast"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/ic_android"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -156,28 +176,32 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:text="Sample5"
-                    android:textSize="14sp"
-                    android:layout_toRightOf="@+id/full_text5"/>
+                    android:layout_marginTop="50dp"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="3dp"
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="120dp"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/full_text6"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:text="Dinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pre Breakfast"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/ic_android"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -187,28 +211,32 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:text="Sample6"
-                    android:textSize="14sp"
-                    android:layout_toRightOf="@+id/full_text6"/>
+                    android:layout_marginTop="50dp"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="3dp"
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:layout_height="120dp"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/full_text7"
-                    android:layout_width="100dp"
-                    android:layout_height="90dp"
-                    android:text="Post Dinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pre Breakfast"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/ic_android"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -218,10 +246,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="Sample1"
-                    android:textSize="14sp"
-                    android:layout_toRightOf="@+id/full_text7"/>
+                    android:layout_marginLeft="20dp"
+                    android:text="Sample7"
+                    android:layout_marginTop="50dp"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>
