@@ -27,7 +27,7 @@ public class DietActivity extends AppCompatActivity {
     DietDataAdapter dietDataAdapter;
     RecyclerView recyclerView;
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-    ArrayList<DietResponseModel> dietList =new ArrayList<>();
+    List<DietResponseModel> dietList;
 
 
     @Override
@@ -42,8 +42,6 @@ public class DietActivity extends AppCompatActivity {
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        dietDataAdapter = new DietDataAdapter(this,dietList);
-        recyclerView.setAdapter(dietDataAdapter);
 
 
 
@@ -55,11 +53,9 @@ public class DietActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<DietResponseModel>>() {
             @Override
             public void onResponse(Call<List<DietResponseModel>> call, Response<List<DietResponseModel>> response) {
-
-
-
-
-                Toast.makeText(DietActivity.this, "success", Toast.LENGTH_SHORT).show();
+                dietList = response.body();
+                dietDataAdapter = new DietDataAdapter(DietActivity.this,dietList);
+                recyclerView.setAdapter(dietDataAdapter);
             }
 
             @Override

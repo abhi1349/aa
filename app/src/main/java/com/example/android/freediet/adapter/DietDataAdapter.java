@@ -46,6 +46,7 @@ public class DietDataAdapter extends RecyclerView.Adapter<DietDataAdapter.MyView
         holder.dietImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
               //  Toast.makeText(context, items.getDietImageId(), Toast.LENGTH_SHORT).show();
                 context.startActivity(new Intent(context,DaysActivity.class));
             }
