@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.example.android.freediet.R;
 import com.example.android.freediet.model.DaysResponseModel;
-import com.example.android.freediet.model.DietResponseModel;
 import com.example.android.freediet.rest.ApiClient;
 import com.example.android.freediet.rest.ApiInterface;
 
@@ -76,16 +75,15 @@ public class DaysActivity extends AppCompatActivity {
 
     private void getDaysData() {
 
-        Call<List<DaysResponseModel>> call = apiService.getDays();
+
+
+        Call<List<DaysResponseModel>> call = apiService.getDays(3,0,15,9);
         call.enqueue(new Callback<List<DaysResponseModel>>() {
             @Override
             public void onResponse(Call<List<DaysResponseModel>> call, Response<List<DaysResponseModel>> response) {
              //   Toast.makeText(DaysActivity.this, "success", Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "AAA_onResponse: ");
-
                //   daysList = response.body();
-
-
             }
 
             @Override

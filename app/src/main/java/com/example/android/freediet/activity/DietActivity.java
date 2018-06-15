@@ -47,6 +47,7 @@ public class DietActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<DietResponseModel>> call, Response<List<DietResponseModel>> response) {
                 dietList = response.body();
+
                 dietDataAdapter = new DietDataAdapter(DietActivity.this,dietList);
                 recyclerView.setAdapter(dietDataAdapter);
             }
