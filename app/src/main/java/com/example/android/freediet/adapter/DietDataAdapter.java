@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -39,16 +40,20 @@ public class DietDataAdapter extends RecyclerView.Adapter<DietDataAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+
+     //  holder.dietTextView.setText(dietItemList.get(position).getDietImageId());
 
         Glide.with(context).load(dietItemList.get(position).getDietImageUrl()).into(holder.dietImageView);
-
         holder.dietImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-              //  Toast.makeText(context, items.getDietImageId(), Toast.LENGTH_SHORT).show();
-                context.startActivity(new Intent(context,DaysActivity.class));
+                Toast.makeText(context, "image id: "+dietItemList.get(position).getDietImageId(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context.getApplicationContext(),DaysActivity.class);
+
+                intent.putExtra("key",dietItemList.get(position).getDietImageId());
+                context.startActivity(intent);
             }
         });
 
@@ -66,12 +71,14 @@ public class DietDataAdapter extends RecyclerView.Adapter<DietDataAdapter.MyView
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView dietImageView = null;
+        private TextView dietTextView = null;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             if (itemView != null) {
                 dietImageView = itemView.findViewById(R.id.card_view_image);
+                dietTextView = itemView.findViewById(R.id.card_view_id);
             }
         }
 

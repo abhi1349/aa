@@ -24,9 +24,9 @@
                     android:id="@+id/full_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pre Breakfast"
+                    android:text="breakfast"
                     android:drawablePadding="15dp"
-                    android:drawableLeft="@drawable/ic_android"
+                    android:drawableLeft="@drawable/breakfast"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -34,6 +34,7 @@
                     android:padding="4dp"/>
 
                 <TextView
+                    android:id="@+id/fullday_breakfast"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -59,9 +60,9 @@
                     android:id="@+id/full_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pre Breakfast"
+                    android:text="lunch"
                     android:drawablePadding="15dp"
-                    android:drawableLeft="@drawable/ic_android"
+                    android:drawableLeft="@drawable/lunch"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -69,6 +70,7 @@
                     android:padding="4dp"/>
 
                 <TextView
+                    android:id="@+id/fullday_lunch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -94,9 +96,9 @@
                     android:id="@+id/full_text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pre Breakfast"
+                    android:text="Snacks"
                     android:drawablePadding="15dp"
-                    android:drawableLeft="@drawable/ic_android"
+                    android:drawableLeft="@drawable/snacks"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -104,6 +106,7 @@
                     android:padding="4dp"/>
 
                 <TextView
+                    android:id="@+id/fullday_snacks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -129,9 +132,9 @@
                     android:id="@+id/full_text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pre Breakfast"
+                    android:text="Dinner"
                     android:drawablePadding="15dp"
-                    android:drawableLeft="@drawable/ic_android"
+                    android:drawableLeft="@drawable/dinner"
                     android:textColor="#ff0000"
                     android:textStyle="bold"
                     android:textSize="18sp"
@@ -139,6 +142,7 @@
                     android:padding="4dp"/>
 
                 <TextView
+                    android:id="@+id/fullday_dinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"

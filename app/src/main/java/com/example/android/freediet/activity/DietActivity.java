@@ -35,16 +35,9 @@ public class DietActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
         setTitle("Free Diet");
-        getData();
-
-
         recyclerView = findViewById(R.id.card_view_recycler_list);
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-
-
+        getData();
     }
 
     private void getData()
