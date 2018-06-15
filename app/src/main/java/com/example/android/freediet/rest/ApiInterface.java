@@ -6,8 +6,10 @@ import com.example.android.freediet.model.DietResponseModel;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -15,8 +17,8 @@ public interface ApiInterface {
     Call<List<DietResponseModel>> getDiet();
 
     @GET("api/Diet/getDiet")
-    Call<List<DaysResponseModel>> getDays(@Field("prakriti")int prakriti,
-                                          @Field("preference")int preference,
-                                          @Field("day")int day,
-                                          @Field("dietCategory")int dietCategory);
+    Call<List<DaysResponseModel>> getDays(@Query("prakriti") int prakriti,
+                                          @Query("preference")int preference,
+                                          @Query("day")int day,
+                                          @Query("dietCategory")int dietCategory);
 }

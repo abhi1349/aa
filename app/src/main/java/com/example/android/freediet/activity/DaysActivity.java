@@ -1,6 +1,7 @@
 package com.example.android.freediet.activity;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,8 +38,8 @@ public class DaysActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_days);
 
-        String test = getIntent().getStringExtra("key");
-        Toast.makeText(this, ""+test, Toast.LENGTH_SHORT).show();
+        int test = getIntent().getIntExtra("key",0);
+//        Toast.makeText(this, ""+test, Toast.LENGTH_SHORT).show();
 
         populateButtons();
     }
@@ -63,32 +64,40 @@ public class DaysActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        getDaysData();
+                        getDaysData(button.getId());
 
-                        Toast.makeText(getApplicationContext(),""+button.getId(),Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(DaysActivity.this,FullDayChartActivity.class));
+//                        Toast.makeText(getApplicationContext(),""+button.getId(),Toast.LENGTH_LONG).show();
+//                        startActivity(new Intent(DaysActivity.this,FullDayChartActivity.class));
                     }
                 });
             }
         }
     }
 
-    private void getDaysData() {
+    private void getDaysData(int day) {
 
 
 
-        Call<List<DaysResponseModel>> call = apiService.getDays(3,0,15,9);
+        Call<List<DaysResponseModel>> call = apiService.getDays(3,0,day,9);
         call.enqueue(new Callback<List<DaysResponseModel>>() {
             @Override
             public void onResponse(Call<List<DaysResponseModel>> call, Response<List<DaysResponseModel>> response) {
-             //   Toast.makeText(DaysActivity.this, "success", Toast.LENGTH_SHORT).show();
+                daysList =  response.body();
+                String[] data = {daysList.get(0).getBreakfast(),daysList.get(0).getDinner(),
+                        daysList.get(0).getLunch(),daysList.get(0).getEvening()};
+
+                Intent intent = new Intent(getApplicationContext(),FullDayChartActivity.class);
+                intent.putExtra("data", data);
+                startActivity(intent);
+//                Toast.makeText(DaysActivity.this, "success", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(DaysActivity.this, ""+daysList.get(0).getBreakfast(), Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "AAA_onResponse: ");
                //   daysList = response.body();
             }
 
             @Override
             public void onFailure(Call<List<DaysResponseModel>> call, Throwable t) {
-              //  Toast.makeText(DaysActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DaysActivity.this, "failed", Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "BBB_onFailure: ");
             }
         });
