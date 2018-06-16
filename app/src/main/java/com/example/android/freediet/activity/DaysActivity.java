@@ -28,18 +28,19 @@ public class DaysActivity extends AppCompatActivity {
     private static final String TAG = "DaysActivity";
     private static final int NUM_COL = 2;
     private static final int NUM_ROWS = 15;
+    public int diet_Category ;
 
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
     List<DaysResponseModel> daysList;
-    ArrayList<DaysResponseModel> models = new ArrayList<>();
+//    ArrayList<DaysResponseModel> models = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_days);
 
-        int test = getIntent().getIntExtra("key",0);
-//        Toast.makeText(this, ""+test, Toast.LENGTH_SHORT).show();
+        diet_Category = getIntent().getIntExtra("key",0);
+        Toast.makeText(this, "diet_Category : "+diet_Category, Toast.LENGTH_SHORT).show();
 
         populateButtons();
     }
@@ -61,7 +62,13 @@ public class DaysActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        getDaysData(button.getId());
+                        getDaysData(button.getId(),diet_Category);
+
+                        //                    int buttonId = button.getId();
+                        button.setText("Day "+button.getId()+" done");
+                        button.setTextColor(getResources().getColor(R.color.colorRed));
+
+                        //           Toast.makeText(DaysActivity.this, "diet_Category : "+diet_Category, Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -69,23 +76,23 @@ public class DaysActivity extends AppCompatActivity {
         }
     }
 
-    private void getDaysData(int day) {
+    private void getDaysData(int day, int diet_Category) {
 
 
 
-        Call<List<DaysResponseModel>> call = apiService.getDays(3,0,day,9);
+        Call<List<DaysResponseModel>> call = apiService.getDays(3,1,day,9);
         call.enqueue(new Callback<List<DaysResponseModel>>() {
             @Override
             public void onResponse(Call<List<DaysResponseModel>> call, Response<List<DaysResponseModel>> response) {
                 daysList =  response.body();
                 String[] data = {daysList.get(0).getBreakfast(),daysList.get(0).getDinner(),
-                        daysList.get(0).getLunch(),daysList.get(0).getEvening()};
+                        daysList.get(0).getLunch(),daysList.get(0).getEvening(),daysList.get(0).getMidMorning()};
 
                 Intent intent = new Intent(getApplicationContext(),FullDayChartActivity.class);
                 intent.putExtra("data", data);
                 startActivity(intent);
 //                Toast.makeText(DaysActivity.this, ""+daysList.get(0).getBreakfast(), Toast.LENGTH_SHORT).show();
-               //   daysList = response.body();
+                //   daysList = response.body();
             }
 
             @Override
@@ -93,5 +100,19 @@ public class DaysActivity extends AppCompatActivity {
                 Toast.makeText(DaysActivity.this, "Network Problem, Connection Failed", Toast.LENGTH_SHORT).show();
             }
         });
+
+//        Call<ArrayList<DaysResponseModel>> call = apiService.getDays(3,0,day,diet_Category);
+//        call.enqueue(new Callback<ArrayList<DaysResponseModel>>() {
+//            @Override
+//            public void onResponse(Call<ArrayList<DaysResponseModel>> call, Response<ArrayList<DaysResponseModel>> response) {
+//               models = response.body();
+//                Toast.makeText(DaysActivity.this, ""+models.get(0).getBreakfast(), Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ArrayList<DaysResponseModel>> call, Throwable t) {
+//
+//            }
+//        });
     }
 }

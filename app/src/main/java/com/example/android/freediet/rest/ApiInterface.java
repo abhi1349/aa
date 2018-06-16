@@ -3,6 +3,7 @@ package com.example.android.freediet.rest;
 import com.example.android.freediet.model.DaysResponseModel;
 import com.example.android.freediet.model.DietResponseModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -21,4 +22,10 @@ public interface ApiInterface {
                                           @Query("preference")int preference,
                                           @Query("day")int day,
                                           @Query("dietCategory")int dietCategory);
+
+//    @GET("api/Diet/getDiet")
+//    Call<ArrayList<DaysResponseModel>> getDays(@Query("prakriti") int prakriti,
+//                                                    @Query("preference")int preference,
+//                                                    @Query("day")int day,
+//                                                    @Query("dietCategory")int dietCategory);
 }
