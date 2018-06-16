@@ -54,10 +54,7 @@ public class DaysActivity extends AppCompatActivity {
                 final Button button = new Button(this);
                 button.setText("Day "+day);
                 button.setId(day);
- //               button.setPadding(8,8,8,8);
                 button.setTextColor(getResources().getColor(R.color.colorPrimary));
-  //              button.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-   //             button.setBackgroundColor(0xFFFF0000);
                 day++;
                 tableRow.addView(button);
                 button.setOnClickListener(new View.OnClickListener() {
@@ -66,8 +63,6 @@ public class DaysActivity extends AppCompatActivity {
 
                         getDaysData(button.getId());
 
-//                        Toast.makeText(getApplicationContext(),""+button.getId(),Toast.LENGTH_LONG).show();
-//                        startActivity(new Intent(DaysActivity.this,FullDayChartActivity.class));
                     }
                 });
             }
@@ -89,16 +84,13 @@ public class DaysActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),FullDayChartActivity.class);
                 intent.putExtra("data", data);
                 startActivity(intent);
-//                Toast.makeText(DaysActivity.this, "success", Toast.LENGTH_SHORT).show();
 //                Toast.makeText(DaysActivity.this, ""+daysList.get(0).getBreakfast(), Toast.LENGTH_SHORT).show();
-                Log.d(TAG, "AAA_onResponse: ");
                //   daysList = response.body();
             }
 
             @Override
             public void onFailure(Call<List<DaysResponseModel>> call, Throwable t) {
-                Toast.makeText(DaysActivity.this, "failed", Toast.LENGTH_SHORT).show();
-                Log.d(TAG, "BBB_onFailure: ");
+                Toast.makeText(DaysActivity.this, "Network Problem, Connection Failed", Toast.LENGTH_SHORT).show();
             }
         });
     }

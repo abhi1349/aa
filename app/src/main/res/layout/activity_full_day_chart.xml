@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Sample1"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="40dp"
                     android:textSize="14sp" />
 
             </RelativeLayout>
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Sample2"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="40dp"
                     android:textSize="14sp" />
 
             </RelativeLayout>
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Sample3"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="40dp"
                     android:textSize="14sp" />
 
             </RelativeLayout>
@@ -147,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Sample4"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="40dp"
                     android:textSize="14sp" />
 
             </RelativeLayout>
@@ -182,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Sample5"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="40dp"
                     android:textSize="14sp" />
 
             </RelativeLayout>
@@ -217,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Sample6"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="40dp"
                     android:textSize="14sp" />
 
             </RelativeLayout>
@@ -252,7 +252,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="Sample7"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="40dp"
                     android:textSize="14sp" />
 
             </RelativeLayout>
