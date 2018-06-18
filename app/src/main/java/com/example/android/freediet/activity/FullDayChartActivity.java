@@ -8,28 +8,35 @@ import android.widget.Toast;
 import com.example.android.freediet.R;
 import com.example.android.freediet.model.DaysResponseModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FullDayChartActivity extends AppCompatActivity {
 
     TextView breakfast,lunch,snacks,dinner,midMorning;
-    DaysResponseModel model;
+    ArrayList<DaysResponseModel> models;
+    Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_day_chart);
-
         breakfast = findViewById(R.id.fullday_breakfast);
         lunch = findViewById(R.id.fullday_lunch);
         snacks = findViewById(R.id.fullday_snacks);
         dinner = findViewById(R.id.fullday_dinner);
         midMorning = findViewById(R.id.fullday_midMorning);
+        getData();
+    }
 
-        String[] d = getIntent().getStringArrayExtra("data");
-        breakfast.setText(d[0]);
-        lunch.setText(d[4]);
-        snacks.setText(d[3]);
-        dinner.setText(d[1]);
-        midMorning.setText(d[2]);
+    public void getData()
+    {
+        bundle = getIntent().getExtras();
+        models = (ArrayList<DaysResponseModel>) getIntent().getSerializableExtra("mylist");
+        breakfast.setText(models.get(0).getBreakfast());
+        lunch.setText(models.get(0).getLunch());
+        snacks.setText(models.get(0).getEvening());
+        dinner.setText(models.get(0).getDinner());
+        midMorning.setText(models.get(0).getMidMorning());
     }
 }

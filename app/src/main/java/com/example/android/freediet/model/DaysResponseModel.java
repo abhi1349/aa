@@ -3,25 +3,9 @@ package com.example.android.freediet.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DaysResponseModel {
-//    public DaysResponseModel(Integer id, Integer dietCategoryId, Integer days, String breakfast, String midMorning, String lunch, String evening, String dinner, Object herbs, String prakritiId, Integer veg, Integer nonVeg, Integer egg, String createdAt, String updatedAt) {
-//        this.id = id;
-//        this.dietCategoryId = dietCategoryId;
-//        this.days = days;
-//        this.breakfast = breakfast;
-//        this.midMorning = midMorning;
-//        this.lunch = lunch;
-//        this.evening = evening;
-//        this.dinner = dinner;
-//        this.herbs = herbs;
-//        this.prakritiId = prakritiId;
-//        this.veg = veg;
-//        this.nonVeg = nonVeg;
-//        this.egg = egg;
-//        this.createdAt = createdAt;
-//        this.updatedAt = updatedAt;
-//    }
+import java.io.Serializable;
 
+public class DaysResponseModel implements Serializable {
     @SerializedName("id")
     @Expose
     private Integer id;

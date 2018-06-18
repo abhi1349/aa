@@ -18,14 +18,8 @@ public interface ApiInterface {
     Call<List<DietResponseModel>> getDiet();
 
     @GET("api/Diet/getDiet")
-    Call<List<DaysResponseModel>> getDays(@Query("prakriti") int prakriti,
-                                          @Query("preference")int preference,
-                                          @Query("day")int day,
-                                          @Query("dietCategory")int dietCategory);
-
-//    @GET("api/Diet/getDiet")
-//    Call<ArrayList<DaysResponseModel>> getDays(@Query("prakriti") int prakriti,
-//                                                    @Query("preference")int preference,
-//                                                    @Query("day")int day,
-//                                                    @Query("dietCategory")int dietCategory);
+    Call<ArrayList<DaysResponseModel>> getDays(@Query("prakriti") int prakriti,
+                                                    @Query("preference")int preference,
+                                                    @Query("day")int day,
+                                                    @Query("dietCategory")int dietCategory);
 }

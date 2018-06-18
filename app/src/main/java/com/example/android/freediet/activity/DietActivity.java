@@ -40,7 +40,6 @@ public class DietActivity extends AppCompatActivity {
         setTitle("Free Diet");
         recyclerView = findViewById(R.id.card_view_recycler_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         getData();
     }
 
@@ -50,50 +49,14 @@ public class DietActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<DietResponseModel>> call, Response<List<DietResponseModel>> response) {
                 dietList = response.body();
-
                 dietDataAdapter = new DietDataAdapter(DietActivity.this, dietList);
                 recyclerView.setAdapter(dietDataAdapter);
-
             }
 
             @Override
             public void onFailure(Call<List<DietResponseModel>> call, Throwable t) {
-                Toast.makeText(DietActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DietActivity.this, "Network Error, check internet settings", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    class CustomCallBack<T> implements Callback<T> {
-
-        private ProgressDialog mProgressDialog;
-        Context context;
-
-        CustomCallBack(Context context) {
-            this.context = context;
-            mProgressDialog = new ProgressDialog(context);
-            ((Activity) context).getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            mProgressDialog.setIndeterminate(true);
-            mProgressDialog.setMessage("Loading...");
-            mProgressDialog.setCanceledOnTouchOutside(false);
-            mProgressDialog.show();
-
-        }
-
-        @Override
-        public void onResponse(Call<T> call, Response<T> response) {
-            if (mProgressDialog.isShowing()) {
-                mProgressDialog.dismiss();
-                ((Activity) context).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            }
-        }
-
-        @Override
-        public void onFailure(Call<T> call, Throwable t) {
-            if (mProgressDialog.isShowing()) {
-                mProgressDialog.dismiss();
-                ((Activity) context).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            }
-        }
     }
 }
