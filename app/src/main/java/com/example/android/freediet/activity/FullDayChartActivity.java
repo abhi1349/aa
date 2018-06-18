@@ -11,7 +11,7 @@ import com.example.android.freediet.model.DaysResponseModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FullDayChartActivity extends AppCompatActivity {
+public class FullDayChartActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
 
     TextView breakfast,lunch,snacks,dinner,midMorning;
     ArrayList<DaysResponseModel> models;
@@ -38,5 +38,10 @@ public class FullDayChartActivity extends AppCompatActivity {
         snacks.setText(models.get(0).getEvening());
         dinner.setText(models.get(0).getDinner());
         midMorning.setText(models.get(0).getMidMorning());
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+
     }
 }
