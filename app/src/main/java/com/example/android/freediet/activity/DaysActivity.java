@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -49,13 +50,29 @@ RecyclerView recyclerView;
 
         dayData = fill_with_data();
         recyclerView = findViewById(R.id.recyclerview);
-        DaysDataAdapter adapter = new DaysDataAdapter(dayData, getApplication());
+        DaysDataAdapter adapter = new DaysDataAdapter(dayData, DaysActivity.this,diet_Category);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
 //        Toast.makeText(this, "diet_Category : "+diet_Category, Toast.LENGTH_SHORT).show();
 //        populateButtons();
 
-        getDaysData(day_id,diet_Category);
+//        getDaysData(day_id,diet_Category);
     }
     public List<DaysData> fill_with_data() {
         List<DaysData> data = new ArrayList<>();
@@ -97,23 +114,23 @@ RecyclerView recyclerView;
 //        }
 //    }
 
-    public void getDaysData(int day_id, int diet_Category) {
-        Call<ArrayList<DaysResponseModel>> call = apiService.getDays(3,0,day_id,diet_Category);
-        call.enqueue(new Callback<ArrayList<DaysResponseModel>>() {
-            @Override
-            public void onResponse(Call<ArrayList<DaysResponseModel>> call, Response<ArrayList<DaysResponseModel>> response) {
-                mylist = response.body();
-               Intent intent = new Intent(getApplicationContext(),FullDayChartActivity.class);
-               Bundle bundle = new Bundle();
-               bundle.putSerializable("mylist",mylist);
-               intent.putExtras(bundle);
-               startActivity(intent);
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<DaysResponseModel>> call, Throwable t) {
-
-            }
-        });
-    }
+//    public void getDaysData(int day_id, int diet_Category) {
+//        Call<ArrayList<DaysResponseModel>> call = apiService.getDays(3,0,day_id,diet_Category);
+//        call.enqueue(new Callback<ArrayList<DaysResponseModel>>() {
+//            @Override
+//            public void onResponse(Call<ArrayList<DaysResponseModel>> call, Response<ArrayList<DaysResponseModel>> response) {
+//                mylist = response.body();
+//               Intent intent = new Intent(getApplicationContext(),FullDayChartActivity.class);
+//               Bundle bundle = new Bundle();
+//               bundle.putSerializable("mylist",mylist);
+//               intent.putExtras(bundle);
+//               startActivity(intent);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ArrayList<DaysResponseModel>> call, Throwable t) {
+//
+//            }
+//        });
+//    }
 }
