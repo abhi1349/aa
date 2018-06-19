@@ -56,27 +56,8 @@ RecyclerView recyclerView;
         DaysDataAdapter adapter = new DaysDataAdapter(dayData, DaysActivity.this,diet_Category);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-                return false;
-            }
-
-            @Override
-            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
-//        Toast.makeText(this, "diet_Category : "+diet_Category, Toast.LENGTH_SHORT).show();
-//        populateButtons();
-
-//        getDaysData(day_id,diet_Category);
     }
+
     public List<DaysData> fill_with_data() {
         List<DaysData> data = new ArrayList<>();
         for(int i=1;i<=30;i++) {
@@ -84,58 +65,6 @@ RecyclerView recyclerView;
         }
         return data;
     }
-
-
-//    private void populateButtons() {
-//        int day = 1;
-//        TableLayout layout = findViewById(R.id.tableLayout);
-//        for (int row = 0; row< NUM_ROWS; row++){
-//            TableRow tableRow = new TableRow(this);
-//            layout.addView(tableRow);
-//            for (int col = 0; col<NUM_COL; col++){
-//                final Button button = new Button(this);
-//                button.setText("Day "+day);
-//                button.setId(day);
-//                button.setTextColor(getResources().getColor(R.color.colorPrimary));
-//                day++;
-//                tableRow.addView(button);
-//                button.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//
-//                        getDaysData(button.getId(),diet_Category);
-//
-//                        //                    int buttonId = button.getId();
-//                        button.setText("Day "+button.getId()+" done");
-//                        button.setTextColor(getResources().getColor(R.color.colorRed));
-//
-//                        //           Toast.makeText(DaysActivity.this, "diet_Category : "+diet_Category, Toast.LENGTH_SHORT).show();
-//
-//                    }
-//                });
-//            }
-//        }
-//    }
-
-//    public void getDaysData(int day_id, int diet_Category) {
-//        Call<ArrayList<DaysResponseModel>> call = apiService.getDays(3,0,day_id,diet_Category);
-//        call.enqueue(new Callback<ArrayList<DaysResponseModel>>() {
-//            @Override
-//            public void onResponse(Call<ArrayList<DaysResponseModel>> call, Response<ArrayList<DaysResponseModel>> response) {
-//                mylist = response.body();
-//               Intent intent = new Intent(getApplicationContext(),FullDayChartActivity.class);
-//               Bundle bundle = new Bundle();
-//               bundle.putSerializable("mylist",mylist);
-//               intent.putExtras(bundle);
-//               startActivity(intent);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ArrayList<DaysResponseModel>> call, Throwable t) {
-//
-//            }
-//        });
-//    }
 
     @Override
     public void onNetworkConnectionChanged(boolean isConnected) {

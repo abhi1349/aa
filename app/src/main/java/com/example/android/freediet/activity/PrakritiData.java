@@ -13,6 +13,7 @@ public class PrakritiData {
         if(db ==null )
             return;
 
+
         List<ContentValues> list = new ArrayList<>();
 
         ContentValues cv = new ContentValues();

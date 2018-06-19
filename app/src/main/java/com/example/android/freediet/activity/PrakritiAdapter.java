@@ -1,5 +1,6 @@
 package com.example.android.freediet.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,7 +16,13 @@ import java.util.ArrayList;
 
 public class PrakritiAdapter extends RecyclerView.Adapter<PrakritiAdapter.ItemViewHolder> {
     private int mNumberItems;
-    ArrayList<String> prakrtiQuestions;
+    ArrayList<ModelPrakriti> prakrtiQuestions;
+    Activity activity;
+
+    public PrakritiAdapter(ArrayList<ModelPrakriti> prakrtiQuestions, Activity activity) {
+        this.prakrtiQuestions = prakrtiQuestions;
+        this.activity = activity;
+    }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType)
@@ -31,7 +38,11 @@ public class PrakritiAdapter extends RecyclerView.Adapter<PrakritiAdapter.ItemVi
 
     @Override
     public void onBindViewHolder(final PrakritiAdapter.ItemViewHolder holder, int position) {
-        holder.question.setText(position);
+        ModelPrakriti modelPrakriti = prakrtiQuestions.get(position);
+        holder.question.setText(modelPrakriti.getQuestions());
+        holder.vita.setText(modelPrakriti.getVata());
+        holder.kapha.setText(modelPrakriti.getKapha());
+        holder.pitta.setText(modelPrakriti.getPitta());
 //        holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 //            @Override
 //            public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -57,10 +68,10 @@ public class PrakritiAdapter extends RecyclerView.Adapter<PrakritiAdapter.ItemVi
         public ItemViewHolder(View itemView) {
             super(itemView);
             question = (TextView) itemView.findViewById(R.id.pk_question);
-//            radioGroup = (RadioGroup) itemView.findViewById(R.id.pk_radiogp);
-//            vita = (RadioButton) itemView.findViewById(R.id.pk_vata);
-//            pitta = (RadioButton) itemView.findViewById(R.id.pk_pitta);
-//            kapha = (RadioButton) itemView.findViewById(R.id.pk_kapha);
+            radioGroup = (RadioGroup) itemView.findViewById(R.id.pk_radiogp);
+            vita = (RadioButton) itemView.findViewById(R.id.pk_vata);
+            pitta = (RadioButton) itemView.findViewById(R.id.pk_pitta);
+            kapha = (RadioButton) itemView.findViewById(R.id.pk_kapha);
         }
     }
 }

@@ -5,6 +5,14 @@ public class ModelPrakriti {
     private String vata;
     private String pitta;
     private String kapha;
+
+    public ModelPrakriti(String questions, String vata, String pitta, String kapha) {
+        this.questions = questions;
+        this.vata = vata;
+        this.pitta = pitta;
+        this.kapha = kapha;
+    }
+
     private String answer;
 
     public String getQuestions() {
