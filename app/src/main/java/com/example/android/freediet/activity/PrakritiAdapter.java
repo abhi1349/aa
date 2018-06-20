@@ -6,9 +6,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.freediet.R;
 
@@ -37,12 +39,32 @@ public class PrakritiAdapter extends RecyclerView.Adapter<PrakritiAdapter.ItemVi
     }
 
     @Override
-    public void onBindViewHolder(final PrakritiAdapter.ItemViewHolder holder, int position) {
+    public void onBindViewHolder(final PrakritiAdapter.ItemViewHolder holder, final int position) {
         ModelPrakriti modelPrakriti = prakrtiQuestions.get(position);
         holder.question.setText(modelPrakriti.getQuestions());
         holder.vita.setText(modelPrakriti.getVata());
         holder.kapha.setText(modelPrakriti.getKapha());
         holder.pitta.setText(modelPrakriti.getPitta());
+        holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                ModelPrakriti model = prakrtiQuestions.get(position);
+                int radioButtonID = radioGroup.getCheckedRadioButtonId();
+                View radioButton = radioGroup.findViewById(radioButtonID);
+                int idx = radioGroup.indexOfChild(radioButton);
+                if(idx == 0)
+                {
+                    model.setAnswer("vata");
+                }
+                else if(idx ==1)
+                {
+                    model.setAnswer("pitta");
+                }
+                else if(idx ==2) {
+                    model.setAnswer("kapha");
+                }
+            }
+        });
 //        holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 //            @Override
 //            public void onCheckedChanged(RadioGroup radioGroup, int i) {
