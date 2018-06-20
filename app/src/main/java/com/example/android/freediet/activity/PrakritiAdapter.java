@@ -63,6 +63,7 @@ public class PrakritiAdapter extends RecyclerView.Adapter<PrakritiAdapter.ItemVi
                 else if(idx ==2) {
                     model.setAnswer("kapha");
                 }
+                Toast.makeText(activity, ""+idx, Toast.LENGTH_SHORT).show();
             }
         });
 //        holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
