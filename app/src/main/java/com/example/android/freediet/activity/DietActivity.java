@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.android.freediet.R;
 import com.example.android.freediet.adapter.DietDataAdapter;
+import com.example.android.freediet.application.ConnectivityReceiver;
+import com.example.android.freediet.application.MyApplication;
 import com.example.android.freediet.model.DietResponseModel;
 import com.example.android.freediet.rest.ApiClient;
 import com.example.android.freediet.rest.ApiInterface;

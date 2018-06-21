@@ -3,13 +3,12 @@ package com.example.android.freediet.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.freediet.R;
+import com.example.android.freediet.application.ConnectivityReceiver;
 import com.example.android.freediet.model.DaysResponseModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FullDayChartActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
 

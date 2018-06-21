@@ -1,4 +1,4 @@
-package com.example.android.freediet.activity;
+package com.example.android.freediet.application;
 
 import android.app.Application;
 

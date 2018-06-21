@@ -1,24 +1,18 @@
 package com.example.android.freediet.activity;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.os.Parcelable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.freediet.R;
 import com.example.android.freediet.adapter.DaysDataAdapter;
+import com.example.android.freediet.application.ConnectivityReceiver;
+import com.example.android.freediet.application.MyApplication;
 import com.example.android.freediet.model.DaysData;
 import com.example.android.freediet.model.DaysResponseModel;
 import com.example.android.freediet.rest.ApiClient;
@@ -26,10 +20,6 @@ import com.example.android.freediet.rest.ApiInterface;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class DaysActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
 
