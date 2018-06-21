@@ -52,6 +52,7 @@ public class PrakritiAdapter extends RecyclerView.Adapter<PrakritiAdapter.ItemVi
                 int radioButtonID = radioGroup.getCheckedRadioButtonId();
                 View radioButton = radioGroup.findViewById(radioButtonID);
                 int idx = radioGroup.indexOfChild(radioButton);
+//                int idx = radioGroup.;
                 if(idx == 0)
                 {
                     model.setAnswer("vata");
@@ -63,7 +64,7 @@ public class PrakritiAdapter extends RecyclerView.Adapter<PrakritiAdapter.ItemVi
                 else if(idx ==2) {
                     model.setAnswer("kapha");
                 }
-                Toast.makeText(activity, ""+idx, Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, ""+checkedId, Toast.LENGTH_SHORT).show();
             }
         });
 //        holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
