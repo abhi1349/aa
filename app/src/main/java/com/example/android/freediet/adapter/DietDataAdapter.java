@@ -1,6 +1,5 @@
 package com.example.android.freediet.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -23,7 +21,6 @@ import com.bumptech.glide.request.target.Target;
 import com.example.android.freediet.activity.DaysActivity;
 import com.example.android.freediet.R;
 import com.example.android.freediet.model.DietResponseModel;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 

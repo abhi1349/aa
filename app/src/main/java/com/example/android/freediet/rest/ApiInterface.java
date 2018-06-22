@@ -2,13 +2,11 @@ package com.example.android.freediet.rest;
 
 import com.example.android.freediet.model.DaysResponseModel;
 import com.example.android.freediet.model.DietResponseModel;
+import com.example.android.freediet.model.PaidDaysResponseModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -22,4 +20,7 @@ public interface ApiInterface {
                                                     @Query("preference")int preference,
                                                     @Query("day")int day,
                                                     @Query("dietCategory")int dietCategory);
+
+    @GET("api/getDiets")
+    Call<ArrayList<PaidDaysResponseModel>> getPaidDays(@Query("email") String email);
 }

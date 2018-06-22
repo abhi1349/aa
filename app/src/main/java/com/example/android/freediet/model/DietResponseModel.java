@@ -12,11 +12,6 @@ public class DietResponseModel {
     private String dietImageUrl;
 
 
-//    public DietResponseModel(int dietImageId, String dietImageUrl) {
-//        this.dietImageId = dietImageId;
-//        this.dietImageUrl = dietImageUrl;
-//    }
-
     public int getDietImageId() {
         return dietImageId;
     }

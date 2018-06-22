@@ -5,7 +5,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -27,14 +26,14 @@ public class DaysActivity extends AppCompatActivity implements ConnectivityRecei
 //    private static final String TAG = "DaysActivity";
 //    private static final int NUM_COL = 2;
 //    private static final int NUM_ROWS = 15;
-RecyclerView recyclerView;
+    RecyclerView recyclerView;
     List<DaysData> dayData;
 
     public int diet_Category ;
     public int day_id;
 
-    private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-    ArrayList<DaysResponseModel> mylist = new ArrayList<>();
+//    private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+//    ArrayList<DaysResponseModel> mylist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

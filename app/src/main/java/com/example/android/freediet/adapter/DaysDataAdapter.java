@@ -1,10 +1,8 @@
 package com.example.android.freediet.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +11,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.android.freediet.R;
-import com.example.android.freediet.activity.DaysActivity;
 import com.example.android.freediet.activity.FullDayChartActivity;
 import com.example.android.freediet.model.DaysData;
 import com.example.android.freediet.model.DaysResponseModel;
@@ -39,7 +36,6 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
         this.list = list;
         this.context = context;
         diet_Category = diet_cat;
-
     }
 
     @Override
@@ -75,7 +71,6 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
             button = itemView.findViewById(R.id.btn);
         }
     }
-
 
     public void getDaysData(int day_id, int diet_Category) {
         Call<ArrayList<DaysResponseModel>> call = apiService.getDays(3,0,day_id,diet_Category);
