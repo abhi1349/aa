@@ -23,20 +23,14 @@ import java.util.List;
 
 public class DaysActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
 
-//    private static final String TAG = "DaysActivity";
-//    private static final int NUM_COL = 2;
-//    private static final int NUM_ROWS = 15;
     RecyclerView recyclerView;
     List<DaysData> dayData;
-
     public int diet_Category ;
     public int day_id;
 
-//    private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-//    ArrayList<DaysResponseModel> mylist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_days);
         diet_Category = getIntent().getIntExtra("key",0);

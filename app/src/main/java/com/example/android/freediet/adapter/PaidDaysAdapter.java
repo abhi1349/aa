@@ -21,7 +21,10 @@ import com.example.android.freediet.rest.ApiClient;
 import com.example.android.freediet.rest.ApiInterface;
 
 import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,17 +33,16 @@ import retrofit2.Response;
 
 public class PaidDaysAdapter extends RecyclerView.Adapter<PaidDaysAdapter.View_Holder>{
 
-    ArrayList<PaidDaysResponseModel> list;
     Activity context;
-    private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-    ArrayList<PaidDaysResponseModel> myPaidlist = new ArrayList<>();
-    public String emailId;
+    ArrayList<PaidDaysResponseModel> paidDietData;
+    String emailId;
 
-    public PaidDaysAdapter(ArrayList<PaidDaysResponseModel> list, Activity context, String emailId) {
-        this.list = list;
+
+    public PaidDaysAdapter(ArrayList<PaidDaysResponseModel> paidDietData, Activity context,String emailId) {
+        this.paidDietData = paidDietData;
         this.context = context;
         this.emailId = emailId;
-    }
+     }
 
     @NonNull
     @Override
@@ -51,34 +53,45 @@ public class PaidDaysAdapter extends RecyclerView.Adapter<PaidDaysAdapter.View_H
     }
 
     @Override
-    public void onBindViewHolder(@NonNull View_Holder holder, final int position) {
- //       holder.btn.setText(list.get(position).getDietEmailid());
+    public void onBindViewHolder(@NonNull final View_Holder holder, final int position) {
+
+ //       String dtStart = paidDietData.get(position).getDateAssign();
+
+
+
+
+        holder.btn.setText(paidDietData.get(position).getDateAssign());
         holder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-  //              Toast.makeText(context, ""+list.get(position).getBtnId(), Toast.LENGTH_SHORT).show();
-  //               emailId = String.valueOf(list.get(position).getDietEmailid());
-                getPaidDaysData(emailId);
-            }
 
-            private void getPaidDaysData(String emailId) {
-                Call<ArrayList<PaidDaysResponseModel>> call = apiService.getPaidDays("jaiiitg16@gmail.com");
-                call.enqueue(new Callback<ArrayList<PaidDaysResponseModel>>() {
-                    @Override
-                    public void onResponse(Call<ArrayList<PaidDaysResponseModel>> call, Response<ArrayList<PaidDaysResponseModel>> response) {
-                        myPaidlist = response.body();
-                        Intent intent = new Intent(context,FullDayChartActivity.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putSerializable("myPaidlist",myPaidlist);
-                        intent.putExtras(bundle);
-                        context.startActivity(intent);
-                    }
+                Toast.makeText(context, "aaaaaa", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(context,FullDayChartActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("paidDietData",paidDietData);
+//                intent.putExtras(bundle);
+//                intent.putExtra("aaa",1);
+//                context.startActivity(intent);
+//            }
 
-                    @Override
-                    public void onFailure(Call<ArrayList<PaidDaysResponseModel>> call, Throwable t) {
+//            private void getPaidDaysData(String emailId) {
+  //              Call<ArrayList<PaidDaysResponseModel>> call = apiService.getPaidDays("jaiiitg16@gmail.com");
+  //              call.enqueue(new Callback<ArrayList<PaidDaysResponseModel>>() {
+  //                  @Override
+  //                  public void onResponse(Call<ArrayList<PaidDaysResponseModel>> call, Response<ArrayList<PaidDaysResponseModel>> response) {
+  //                      paidDietData = response.body();
+//                        Intent intent = new Intent(context,FullDayChartActivity.class);
+//                        Bundle bundle = new Bundle();
+//                        bundle.putSerializable("paidDietData",paidDietData);
+//                        intent.putExtras(bundle);
+//                        context.startActivity(intent);
+  //                  }
 
-                    }
-                });
+  //                  @Override
+  //                  public void onFailure(Call<ArrayList<PaidDaysResponseModel>> call, Throwable t) {
+
+  //                  }
+  //              });
             }
         });
 
@@ -86,7 +99,7 @@ public class PaidDaysAdapter extends RecyclerView.Adapter<PaidDaysAdapter.View_H
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return paidDietData.size();
     }
 
     class View_Holder extends RecyclerView.ViewHolder{

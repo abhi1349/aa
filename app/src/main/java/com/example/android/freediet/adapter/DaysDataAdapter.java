@@ -29,7 +29,7 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
     List<DaysData> list;
     Activity context;
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-    ArrayList<DaysResponseModel> mylist = new ArrayList<>();
+    ArrayList<DaysResponseModel> freeDietData = new ArrayList<>();
     public int diet_Category ;
 
     public DaysDataAdapter(List<DaysData> list, Activity context, int diet_cat) {
@@ -77,11 +77,12 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
         call.enqueue(new Callback<ArrayList<DaysResponseModel>>() {
             @Override
             public void onResponse(Call<ArrayList<DaysResponseModel>> call, Response<ArrayList<DaysResponseModel>> response) {
-                mylist = response.body();
+                freeDietData = response.body();
                 Intent intent = new Intent(context,FullDayChartActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("mylist",mylist);
+                bundle.putSerializable("freeDietData",freeDietData);
                 intent.putExtras(bundle);
+                intent.putExtra("aaa",2);
                 context.startActivity(intent);
             }
 

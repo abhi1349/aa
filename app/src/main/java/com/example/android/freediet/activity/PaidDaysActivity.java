@@ -24,32 +24,20 @@ import java.util.List;
 public class PaidDaysActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    int dayCount;
-   Activity activity;
+    Activity activity;
     public String emailId="jaiiitg16@gmail.com";
-//    private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
     ArrayList<PaidDaysResponseModel> paidDaysList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paid_days);
         paidDaysList = (ArrayList<PaidDaysResponseModel>) getIntent().getSerializableExtra("paidDaysList");
- //       Toast.makeText(this, "Result: "+paidDaysList.size(), Toast.LENGTH_SHORT).show();
 
-        dayCount = paidDaysList.size();
         recyclerView = findViewById(R.id.paid_days_recyclerView);
         PaidDaysAdapter adapter = new PaidDaysAdapter(paidDaysList,activity,emailId);
-        recyclerView.setAdapter(adapter);
         int numberOfColumns = 3;
         recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
-
-//        public ArrayList<paidDaysList> fill_with_data() {
-//            ArrayList<paidDaysList> data = new ArrayList<>();
-//            for(int i=1;i<=30;i++) {
-//               data.add(new DaysData("Day "+i,i));
-//            }
-//            return data;
-//        }
-
+        recyclerView.setAdapter(adapter);
     }
 }
