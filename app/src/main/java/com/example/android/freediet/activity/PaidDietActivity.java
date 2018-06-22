@@ -27,7 +27,6 @@ import retrofit2.Response;
 public class PaidDietActivity extends AppCompatActivity {
 
     ImageView imageView;
-    RecyclerView recyclerView;
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
     ArrayList<PaidDaysResponseModel> paidDaysList;
     public String emailId="jaiiitg16@gmail.com";
@@ -59,7 +58,7 @@ public class PaidDietActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ArrayList<PaidDaysResponseModel>> call, Throwable t) {
-                Toast.makeText(PaidDietActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PaidDietActivity.this, "Network Failure, Try again", Toast.LENGTH_SHORT).show();
             }
         });
     }

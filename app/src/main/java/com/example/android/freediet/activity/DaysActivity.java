@@ -36,6 +36,7 @@ public class DaysActivity extends AppCompatActivity implements ConnectivityRecei
 //    ArrayList<DaysResponseModel> mylist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_days);
         diet_Category = getIntent().getIntExtra("key",0);

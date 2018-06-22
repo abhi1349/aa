@@ -33,7 +33,7 @@ public class PaidDaysActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paid_days);
- //       paidDaysList = (ArrayList<PaidDaysResponseModel>) getIntent().getSerializableExtra("paidDaysList");
+        paidDaysList = (ArrayList<PaidDaysResponseModel>) getIntent().getSerializableExtra("paidDaysList");
  //       Toast.makeText(this, "Result: "+paidDaysList.size(), Toast.LENGTH_SHORT).show();
 
         dayCount = paidDaysList.size();
