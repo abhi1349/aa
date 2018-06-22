@@ -58,11 +58,6 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
                 Toast.makeText(context, ""+list.get(position).getBtnId(), Toast.LENGTH_SHORT).show();
                 int id = list.get(position).getBtnId();
                 getDaysData(id++,diet_Category);
-//
-//                Intent intent = new Intent(context.getApplicationContext(),FullDayChartActivity.class);
-//                intent.putExtra("dayId",list.get(position).getBtnId());
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                context.startActivity(intent);
             }
         });
     }
@@ -73,12 +68,10 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
     }
 
     class View_Holder extends RecyclerView.ViewHolder {
-        CardView cv;
         Button button;
 
         View_Holder(View itemView) {
             super(itemView);
-            cv = itemView.findViewById(R.id.cardView);
             button = itemView.findViewById(R.id.btn);
         }
     }

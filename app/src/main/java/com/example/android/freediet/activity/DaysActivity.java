@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -45,7 +46,8 @@ RecyclerView recyclerView;
         recyclerView = findViewById(R.id.recyclerview);
         DaysDataAdapter adapter = new DaysDataAdapter(dayData, DaysActivity.this,diet_Category);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        int numberOfColumns = 3;
+        recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
     }
 
     public List<DaysData> fill_with_data() {
