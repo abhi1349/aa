@@ -23,6 +23,8 @@
         </activity>
         <activity android:name=".activity.FullDayChartActivity" />
         <activity android:name=".activity.DaysActivity" />
+        <activity android:name=".activity.DietActivity" />
+        <activity android:name=".activity.PaidDaysActivity"></activity>
 
         <receiver
             android:name=".application.ConnectivityReceiver"
@@ -32,8 +34,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.DietActivity" />
-        <activity android:name=".activity.PaidDaysActivity"></activity>
+
     </application>
 
 </manifest>

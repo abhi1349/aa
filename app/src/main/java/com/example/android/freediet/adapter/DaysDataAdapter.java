@@ -2,6 +2,7 @@ package com.example.android.freediet.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -51,9 +52,13 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, ""+list.get(position).getBtnId(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, ""+list.get(position).getBtnId(), Toast.LENGTH_SHORT).show();
                 int id = list.get(position).getBtnId();
+                holder.button.setText("Done");
+                holder.button.setTextColor(Color.parseColor("#ff0000"));
+              //  holder.button.setBackgroundResource(R.color.persianGreeen);
                 getDaysData(id++,diet_Category);
+
             }
         });
     }
