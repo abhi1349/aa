@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.android.freediet.R;
 import com.example.android.freediet.activity.FullDayChartActivity;
@@ -51,11 +52,9 @@ public class FreeDaysAdapter extends RecyclerView.Adapter<FreeDaysAdapter.View_H
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(context, ""+list.get(position).getBtnId(), Toast.LENGTH_SHORT).show();
                 int id = list.get(position).getBtnId();
                 holder.button.setText("Done");
                 holder.button.setTextColor(Color.parseColor("#ff0000"));
-              //  holder.button.setBackgroundResource(R.color.persianGreeen);
                 getDaysData(id++,diet_Category);
 
             }
@@ -93,6 +92,7 @@ public class FreeDaysAdapter extends RecyclerView.Adapter<FreeDaysAdapter.View_H
             @Override
             public void onFailure(Call<ArrayList<FreeDaysResponseModel>> call, Throwable t) {
 
+                Toast.makeText(context, "connection failed, Please check your internet settings", Toast.LENGTH_SHORT).show();
             }
         });
     }

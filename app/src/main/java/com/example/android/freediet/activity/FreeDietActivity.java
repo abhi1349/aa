@@ -28,7 +28,7 @@ public class FreeDietActivity extends AppCompatActivity implements ConnectivityR
 
     FreeDietAdapter dietDataAdapter;
     RecyclerView recyclerView;
-    AlertDialog.Builder alertDialogBuilder;
+//    AlertDialog.Builder alertDialogBuilder;
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
     List<FreeDietResponseModel> dietList;
 
@@ -55,29 +55,31 @@ public class FreeDietActivity extends AppCompatActivity implements ConnectivityR
 
             @Override
             public void onFailure(Call<List<FreeDietResponseModel>> call, Throwable t) {
-                alertDialogBuilder = new AlertDialog.Builder(FreeDietActivity.this);
-                alertDialogBuilder.setTitle("Warning...");
-                alertDialogBuilder.setIcon(R.drawable.warning);
-                alertDialogBuilder.setMessage("No Internet, Check your connection and try again.");
-                alertDialogBuilder.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(FreeDietActivity.this, "try again", Toast.LENGTH_SHORT).show();
-                        Intent in = new Intent(android.provider.Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
-                        startActivity(in);
 
-                    }
-                });
-                alertDialogBuilder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(FreeDietActivity.this, "Cancle", Toast.LENGTH_SHORT).show();
-                        AlertDialog alertDialog = alertDialogBuilder.create();
-                        alertDialog.dismiss();
-                    }
-                });
-                AlertDialog alertDialog = alertDialogBuilder.create();
-               // alertDialog.show();
+                Toast.makeText(FreeDietActivity.this, "No Internet Connection, Please check your internet settings", Toast.LENGTH_SHORT).show();
+//                alertDialogBuilder = new AlertDialog.Builder(FreeDietActivity.this);
+//                alertDialogBuilder.setTitle("Warning...");
+//                alertDialogBuilder.setIcon(R.drawable.warning);
+//                alertDialogBuilder.setMessage("No Internet, Check your connection and try again.");
+//                alertDialogBuilder.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        Toast.makeText(FreeDietActivity.this, "try again", Toast.LENGTH_SHORT).show();
+//                        Intent in = new Intent(android.provider.Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
+//                        startActivity(in);
+//
+//                    }
+//                });
+//                alertDialogBuilder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        Toast.makeText(FreeDietActivity.this, "Cancle", Toast.LENGTH_SHORT).show();
+//                        AlertDialog alertDialog = alertDialogBuilder.create();
+//                        alertDialog.dismiss();
+//                    }
+//                });
+//                AlertDialog alertDialog = alertDialogBuilder.create();
+//      //          alertDialog.show();
             }
         });
     }

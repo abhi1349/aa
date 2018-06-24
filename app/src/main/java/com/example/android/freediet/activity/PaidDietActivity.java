@@ -36,6 +36,7 @@ public class PaidDietActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getDaysData();
+
             }
         });
     }

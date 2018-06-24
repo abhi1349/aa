@@ -39,7 +39,6 @@ public class FreeDietAdapter extends RecyclerView.Adapter<FreeDietAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_free_diet_category_item,parent,false);
-
         return new MyViewHolder(view);
     }
 
@@ -67,15 +66,11 @@ public class FreeDietAdapter extends RecyclerView.Adapter<FreeDietAdapter.MyView
             @Override
             public void onClick(View view) {
                 FreeDietResponseModel aa = dietItemList.get(position);
-
-                Toast.makeText(context, "image id: "+aa.getDietImageId(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context.getApplicationContext(),FreeDaysActivity.class);
-
                 intent.putExtra("key",aa.getDietImageId());
                 context.startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -91,15 +86,12 @@ public class FreeDietAdapter extends RecyclerView.Adapter<FreeDietAdapter.MyView
 
         private ImageView dietImageView = null;
         public ProgressBar progressBar;
-
         public MyViewHolder(View itemView) {
             super(itemView);
-
             if (itemView != null) {
                 dietImageView = itemView.findViewById(R.id.card_view_image);
                   progressBar = itemView.findViewById(R.id.progress);
             }
         }
-
     }
 }

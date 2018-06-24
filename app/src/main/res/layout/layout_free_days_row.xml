@@ -15,5 +15,5 @@
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
             android:textAllCaps="false"
-            android:background="@drawable/btn_shape_capsule" />
+            android:background="@drawable/btn_shape_circle" />
     </RelativeLayout>

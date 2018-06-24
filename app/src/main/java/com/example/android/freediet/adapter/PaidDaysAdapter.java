@@ -2,6 +2,7 @@ package com.example.android.freediet.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -36,12 +37,14 @@ public class PaidDaysAdapter extends RecyclerView.Adapter<PaidDaysAdapter.View_H
     }
 
     @Override
-    public void onBindViewHolder(@NonNull View_Holder view_holder, int i) {
+    public void onBindViewHolder(@NonNull final View_Holder view_holder, final int i) {
         final int menuId = (list.get(i).getId())-1;
         view_holder.button.setText(list.get(i).getDateAssign());
         view_holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                view_holder.button.setText("Done");
+                view_holder.button.setTextColor(Color.parseColor("#ff0000"));
                 Intent intent = new Intent(context,FullDayChartActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("paidDietData",list);
