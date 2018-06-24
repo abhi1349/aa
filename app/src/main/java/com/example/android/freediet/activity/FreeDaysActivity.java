@@ -22,8 +22,8 @@ public class FreeDaysActivity extends AppCompatActivity implements ConnectivityR
 
     RecyclerView recyclerView;
     List<FreeDaysData> dayData;
-    public int diet_Category ;
-    public int day_id;
+    private int diet_Category ;
+    private int day_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
