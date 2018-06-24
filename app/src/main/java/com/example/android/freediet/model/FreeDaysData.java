@@ -1,10 +1,10 @@
 package com.example.android.freediet.model;
 
-public class DaysData {
+public class FreeDaysData {
     private String btname;
     private int btnId;
 
-    public DaysData(String name, int btnId) {
+    public FreeDaysData(String name, int btnId) {
         btname = name;
         this.btnId = btnId;
     }

@@ -6,17 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activity.PaidDietActivity">
 
-    <RelativeLayout
+
+    <ImageView
+        android:id="@+id/paid_imageview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/paidDiet_HeaderImg"
-            android:src="@drawable/a"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"/>
-
-    </RelativeLayout>
-
+        android:layout_height="100dp"
+        android:src="@drawable/diet"/>
 
 </RelativeLayout>

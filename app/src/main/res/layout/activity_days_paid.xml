@@ -15,14 +15,14 @@
             android:id="@+id/paid_days_imgView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/a"/>
+            android:src="@drawable/ic_launcher_background"/>
 
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/paid_days_recyclerView"
         android:layout_width="match_parent"
-         android:layout_height="match_parent">
+        android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
 

@@ -9,12 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.android.freediet.R;
 import com.example.android.freediet.activity.FullDayChartActivity;
-import com.example.android.freediet.model.DaysData;
-import com.example.android.freediet.model.DaysResponseModel;
+import com.example.android.freediet.model.FreeDaysData;
+import com.example.android.freediet.model.FreeDaysResponseModel;
 import com.example.android.freediet.rest.ApiClient;
 import com.example.android.freediet.rest.ApiInterface;
 
@@ -25,15 +24,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_Holder> {
+public class FreeDaysAdapter extends RecyclerView.Adapter<FreeDaysAdapter.View_Holder> {
 
-    List<DaysData> list;
+    List<FreeDaysData> list;
     Activity context;
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-    ArrayList<DaysResponseModel> freeDietData = new ArrayList<>();
+    ArrayList<FreeDaysResponseModel> freeDietData = new ArrayList<>();
     public int diet_Category ;
 
-    public DaysDataAdapter(List<DaysData> list, Activity context, int diet_cat) {
+    public FreeDaysAdapter(List<FreeDaysData> list, Activity context, int diet_cat) {
         this.list = list;
         this.context = context;
         diet_Category = diet_cat;
@@ -41,7 +40,7 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
 
     @Override
     public View_Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.days_row_layout, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_free_days_row, parent, false);
         View_Holder holder = new View_Holder(v);
         return holder;
     }
@@ -78,10 +77,10 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
     }
 
     public void getDaysData(int day_id, int diet_Category) {
-        Call<ArrayList<DaysResponseModel>> call = apiService.getDays(3,0,day_id,diet_Category);
-        call.enqueue(new Callback<ArrayList<DaysResponseModel>>() {
+        Call<ArrayList<FreeDaysResponseModel>> call = apiService.getDays(3,0,day_id,diet_Category);
+        call.enqueue(new Callback<ArrayList<FreeDaysResponseModel>>() {
             @Override
-            public void onResponse(Call<ArrayList<DaysResponseModel>> call, Response<ArrayList<DaysResponseModel>> response) {
+            public void onResponse(Call<ArrayList<FreeDaysResponseModel>> call, Response<ArrayList<FreeDaysResponseModel>> response) {
                 freeDietData = response.body();
                 Intent intent = new Intent(context,FullDayChartActivity.class);
                 Bundle bundle = new Bundle();
@@ -92,7 +91,7 @@ public class DaysDataAdapter extends RecyclerView.Adapter<DaysDataAdapter.View_H
             }
 
             @Override
-            public void onFailure(Call<ArrayList<DaysResponseModel>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<FreeDaysResponseModel>> call, Throwable t) {
 
             }
         });

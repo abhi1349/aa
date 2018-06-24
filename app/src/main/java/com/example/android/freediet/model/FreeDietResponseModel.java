@@ -3,7 +3,7 @@ package com.example.android.freediet.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DietResponseModel {
+public class FreeDietResponseModel {
 
     @SerializedName("id")
     private int dietImageId;

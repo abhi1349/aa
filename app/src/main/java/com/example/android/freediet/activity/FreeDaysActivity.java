@@ -10,21 +10,18 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.android.freediet.R;
-import com.example.android.freediet.adapter.DaysDataAdapter;
+import com.example.android.freediet.adapter.FreeDaysAdapter;
 import com.example.android.freediet.application.ConnectivityReceiver;
 import com.example.android.freediet.application.MyApplication;
-import com.example.android.freediet.model.DaysData;
-import com.example.android.freediet.model.DaysResponseModel;
-import com.example.android.freediet.rest.ApiClient;
-import com.example.android.freediet.rest.ApiInterface;
+import com.example.android.freediet.model.FreeDaysData;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaysActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
+public class FreeDaysActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
 
     RecyclerView recyclerView;
-    List<DaysData> dayData;
+    List<FreeDaysData> dayData;
     public int diet_Category ;
     public int day_id;
 
@@ -32,22 +29,22 @@ public class DaysActivity extends AppCompatActivity implements ConnectivityRecei
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_days);
+        setContentView(R.layout.activity_days_free);
         diet_Category = getIntent().getIntExtra("key",0);
         day_id = getIntent().getIntExtra("dayId",1);
 
         dayData = fill_with_data();
         recyclerView = findViewById(R.id.recyclerview);
-        DaysDataAdapter adapter = new DaysDataAdapter(dayData, DaysActivity.this,diet_Category);
+        FreeDaysAdapter adapter = new FreeDaysAdapter(dayData,this,diet_Category);
         recyclerView.setAdapter(adapter);
         int numberOfColumns = 3;
         recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
     }
 
-    public List<DaysData> fill_with_data() {
-        List<DaysData> data = new ArrayList<>();
+    public List<FreeDaysData> fill_with_data() {
+        List<FreeDaysData> data = new ArrayList<>();
         for(int i=1;i<=30;i++) {
-            data.add(new DaysData("Day "+i,i));
+            data.add(new FreeDaysData("Day "+i,i));
         }
         return data;
     }

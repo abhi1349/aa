@@ -7,15 +7,14 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
+
     <Button
         android:gravity="center"
         android:id="@+id/paid_days_btn"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:textColor="@color/colorWhite"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textAllCaps="false"
-        android:background="@drawable/btn_shape_capsule" />
+        android:background="@drawable/btn_shape_capsule"/>
 </RelativeLayout>
-
-

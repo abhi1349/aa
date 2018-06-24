@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context=".activity.DietActivity">
+    tools:context=".activity.FreeDaysActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/card_view_recycler_list"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class PaidDaysResponseModel implements Serializable {
+public class PaidDaysResponseModel implements Serializable{
 
     @SerializedName("id")
     @Expose

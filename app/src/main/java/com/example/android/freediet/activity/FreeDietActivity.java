@@ -13,10 +13,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.android.freediet.R;
-import com.example.android.freediet.adapter.DietDataAdapter;
+import com.example.android.freediet.adapter.FreeDietAdapter;
 import com.example.android.freediet.application.ConnectivityReceiver;
 import com.example.android.freediet.application.MyApplication;
-import com.example.android.freediet.model.DietResponseModel;
+import com.example.android.freediet.model.FreeDietResponseModel;
 import com.example.android.freediet.rest.ApiClient;
 import com.example.android.freediet.rest.ApiInterface;
 import java.util.List;
@@ -24,18 +24,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DietActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
+public class FreeDietActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener{
 
-    DietDataAdapter dietDataAdapter;
+    FreeDietAdapter dietDataAdapter;
     RecyclerView recyclerView;
     AlertDialog.Builder alertDialogBuilder;
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-    List<DietResponseModel> dietList;
+    List<FreeDietResponseModel> dietList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_diet);
+        setContentView(R.layout.activity_diet_free);
         setTitle("Free Diet");
 
         recyclerView = findViewById(R.id.card_view_recycler_list);
@@ -44,25 +44,25 @@ public class DietActivity extends AppCompatActivity implements ConnectivityRecei
     }
 
     private void getData() {
-        Call<List<DietResponseModel>> call = apiService.getDiet();
-        call.enqueue(new Callback<List<DietResponseModel>>() {
+        Call<List<FreeDietResponseModel>> call = apiService.getDiet();
+        call.enqueue(new Callback<List<FreeDietResponseModel>>() {
             @Override
-            public void onResponse(Call<List<DietResponseModel>> call, Response<List<DietResponseModel>> response) {
+            public void onResponse(Call<List<FreeDietResponseModel>> call, Response<List<FreeDietResponseModel>> response) {
                 dietList = response.body();
-                dietDataAdapter = new DietDataAdapter(DietActivity.this, dietList);
+                dietDataAdapter = new FreeDietAdapter(FreeDietActivity.this, dietList);
                 recyclerView.setAdapter(dietDataAdapter);
             }
 
             @Override
-            public void onFailure(Call<List<DietResponseModel>> call, Throwable t) {
-                alertDialogBuilder = new AlertDialog.Builder(DietActivity.this);
+            public void onFailure(Call<List<FreeDietResponseModel>> call, Throwable t) {
+                alertDialogBuilder = new AlertDialog.Builder(FreeDietActivity.this);
                 alertDialogBuilder.setTitle("Warning...");
                 alertDialogBuilder.setIcon(R.drawable.warning);
                 alertDialogBuilder.setMessage("No Internet, Check your connection and try again.");
                 alertDialogBuilder.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(DietActivity.this, "try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FreeDietActivity.this, "try again", Toast.LENGTH_SHORT).show();
                         Intent in = new Intent(android.provider.Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
                         startActivity(in);
 
@@ -71,7 +71,7 @@ public class DietActivity extends AppCompatActivity implements ConnectivityRecei
                 alertDialogBuilder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(DietActivity.this, "Cancle", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FreeDietActivity.this, "Cancle", Toast.LENGTH_SHORT).show();
                         AlertDialog alertDialog = alertDialogBuilder.create();
                         alertDialog.dismiss();
                     }

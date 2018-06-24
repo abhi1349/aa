@@ -18,19 +18,19 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.example.android.freediet.activity.DaysActivity;
+import com.example.android.freediet.activity.FreeDaysActivity;
 import com.example.android.freediet.R;
-import com.example.android.freediet.model.DietResponseModel;
+import com.example.android.freediet.model.FreeDietResponseModel;
 
 import java.util.List;
 
 
-public class DietDataAdapter extends RecyclerView.Adapter<DietDataAdapter.MyViewHolder> {
+public class FreeDietAdapter extends RecyclerView.Adapter<FreeDietAdapter.MyViewHolder> {
 
-    private List<DietResponseModel> dietItemList;
+    private List<FreeDietResponseModel> dietItemList;
     Context context;
 
-    public DietDataAdapter(Context context, List<DietResponseModel> freeDietItemList) {
+    public FreeDietAdapter(Context context, List<FreeDietResponseModel> freeDietItemList) {
         this.dietItemList = freeDietItemList;
         this.context = context;
     }
@@ -38,7 +38,7 @@ public class DietDataAdapter extends RecyclerView.Adapter<DietDataAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card_view_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_free_diet_category_item,parent,false);
 
         return new MyViewHolder(view);
     }
@@ -66,10 +66,10 @@ public class DietDataAdapter extends RecyclerView.Adapter<DietDataAdapter.MyView
         holder.dietImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DietResponseModel aa = dietItemList.get(position);
+                FreeDietResponseModel aa = dietItemList.get(position);
 
                 Toast.makeText(context, "image id: "+aa.getDietImageId(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context.getApplicationContext(),DaysActivity.class);
+                Intent intent = new Intent(context.getApplicationContext(),FreeDaysActivity.class);
 
                 intent.putExtra("key",aa.getDietImageId());
                 context.startActivity(intent);
