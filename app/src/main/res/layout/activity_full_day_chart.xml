@@ -27,7 +27,7 @@
                     android:id="@+id/full_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="breakfast"
+                    android:text="Breakfast"
                     android:drawablePadding="15dp"
                     android:drawableLeft="@drawable/breakfast"
                     android:textColor="#ff0000"
@@ -63,7 +63,7 @@
                     android:id="@+id/full_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mid-morning"
+                    android:text="Mid-morning"
                     android:drawablePadding="15dp"
                     android:drawableLeft="@drawable/lunch"
                     android:textColor="#ff0000"
@@ -99,7 +99,7 @@
                     android:id="@+id/full_text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="snacks"
+                    android:text="Lunch"
                     android:drawablePadding="15dp"
                     android:drawableLeft="@drawable/snacks"
                     android:textColor="#ff0000"
@@ -109,7 +109,7 @@
                     android:padding="4dp"/>
 
                 <TextView
-                    android:id="@+id/fullday_snacks"
+                    android:id="@+id/fullday_lunch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -135,7 +135,7 @@
                     android:id="@+id/full_text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="dinner"
+                    android:text="Snacks"
                     android:drawablePadding="15dp"
                     android:drawableLeft="@drawable/dinner"
                     android:textColor="#ff0000"
@@ -145,7 +145,7 @@
                     android:padding="4dp"/>
 
                 <TextView
-                    android:id="@+id/fullday_dinner"
+                    android:id="@+id/fullday_snacks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -171,7 +171,7 @@
                     android:id="@+id/full_text5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="lunch"
+                    android:text="Dinner"
                     android:drawablePadding="15dp"
                     android:drawableLeft="@drawable/breakfast"
                     android:textColor="#ff0000"
@@ -181,7 +181,7 @@
                     android:padding="4dp"/>
 
                 <TextView
-                    android:id="@+id/fullday_lunch"
+                    android:id="@+id/fullday_dinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
